@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script>
+        const http = new XMLHttpRequest();
+        const url = 'http://127.0.0.1:9090/test';
+        http.open("POST",url);
+        http.send();
+
+        http.onreadystatechange = (e) => {
+	        document.getElementById("output")
+			        .innerHTML = http.responseText;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello</h1>
+    <div id="output">
+    </div>
+</body>
+</html>
